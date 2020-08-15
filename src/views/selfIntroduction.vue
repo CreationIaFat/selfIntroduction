@@ -17,14 +17,15 @@ import { Component, Vue } from "vue-property-decorator";
 import { component } from 'vue/types/umd';
 import SotahExplainArea from "@/components/organisms/SotahExplainArea.vue";
 import { mapGetters } from 'vuex';
+import * as constans from "@/constants/selfIntroduction";
 
 @Component({
     components: {
         SotahExplainArea,
     },
     computed: {
-        ...mapGetters({ model: 'selefIntroduction/getSelfIntroductionModel'})
-    }
+        ...mapGetters({ model: constans.GET_VIEW_MODEL_PATH})
+    },
 })
 export default class selfIntroduction extends Vue {
     public greatText: string = "Hello";
@@ -35,7 +36,7 @@ export default class selfIntroduction extends Vue {
 
     hobbyClickedPass3Last(payload: string){
         // console.log(payload);
-        this.$store.dispatch('selefIntroduction/commitCrickedButton', payload);
+        this.$store.dispatch(constans.COMMIT_CLICKED_HOBBY_BUTTON, payload);
     }
 }
 

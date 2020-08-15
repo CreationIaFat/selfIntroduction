@@ -6,3 +6,5 @@ const mutations: Mutations<types.IState, types.IMutations> = {
         state.clickedButton = payload;
     },
 };
+
+export default mutations;

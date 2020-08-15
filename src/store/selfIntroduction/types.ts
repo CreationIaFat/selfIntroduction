@@ -11,9 +11,17 @@ export interface IActions {
 }
 
 export interface IGetters {
-getSelfIntroductionModel: SelfIntroductionModel;
+    getSelfIntroductionModel: SelfIntroductionModel;
 }
 
 export interface IMutations {
     setCrickedButton: string;
+}
+
+export interface RA {
+    'selfIntroduction/commitCrickedButton': IActions['commitCrickedButton'],
+}
+
+export interface RS {
+    selfIntroduction: IState
 }

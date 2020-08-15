@@ -1,5 +1,17 @@
 export interface IState {
-    
+    // clickedButton: string;
+}
+
+export interface IActions {
+    // commitCrickedButton: string;
+}
+
+export interface IMutations{
+    // setCrickedButton: string;
+}
+
+export interface IGetters{
+
 }
 
 // getter関数の引数は固定のため、インデックスシグニチャを利用して全てのgetter関数にState型とgetter関数の型参照を定義
