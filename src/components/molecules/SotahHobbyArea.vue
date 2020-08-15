@@ -5,17 +5,17 @@
             <tbody>
                 <tr>
                     <th scope="row">Indoor hobby</th>
-                    <SotahTableData :dataName="HobbyIn1" />
-                    <SotahTableData :dataName="HobbyIn2" />
-                    <SotahTableData :dataName="HobbyIn3" />
-                    <SotahTableData :dataName="HobbyIn4" />
+                    <SotahTableData @clickedItm1="hobbyClickedPass1" :dataName="HobbyIn1" />
+                    <SotahTableData @clickedItm1="hobbyClickedPass1" :dataName="HobbyIn2" />
+                    <SotahTableData @clickedItm1="hobbyClickedPass1" :dataName="HobbyIn3" />
+                    <SotahTableData @clickedItm1="hobbyClickedPass1" :dataName="HobbyIn4" />
                 </tr>
                  <tr>
                     <th scope="row">Outdoor hobby</th>
-                    <SotahTableData :dataName="HobbyOut1" />
-                    <SotahTableData :dataName="HobbyOut2" />
-                    <SotahTableData :dataName="HobbyOut3" />
-                    <SotahTableData :dataName="HobbyOut4" />
+                    <SotahTableData @clickedItm1="hobbyClickedPass1" :dataName="HobbyOut1" />
+                    <SotahTableData @clickedItm1="hobbyClickedPass1" :dataName="HobbyOut2" />
+                    <SotahTableData @clickedItm1="hobbyClickedPass1" :dataName="HobbyOut3" />
+                    <SotahTableData @clickedItm1="hobbyClickedPass1" :dataName="HobbyOut4" />
                 </tr>
                  <tr>
                     <th scope="row"></th>
@@ -47,6 +47,10 @@ export default class SotahHobbyArea extends Vue{
     public HobbyOut2:string = "Billiards";
     public HobbyOut3:string = "Skateboard";
     public HobbyOut4:string = "Bowling";
+    hobbyClickedPass1(payload: string){
+    //    console.log(payload);
+        this.$emit('clickedItm2', payload);
+    }
 }
 </script>
 

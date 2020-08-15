@@ -4,17 +4,7 @@
             <img alt="Rohan" src="../assets/kishiberohan.png" height="300px">
         </div>
         <div class="col-8 h-75 explainArea">
-            <SotahExplainArea class="h-100"/>
-            <div class="d-none">
-                ExplainArea
-                <p>{{ greatText }}</p>
-                <p>
-                    <SotahButton :great="greatText" @click="onSotahButtonClicked" />
-                </p>
-                <p>
-                    <SotahResetButton :initialValue="Hello" v-model="greatText" />
-                </p>
-            </div>
+            <SotahExplainArea @clickedItm3="hobbyClickedPass3Last" class="h-100"/>
         </div>
         <div class="col footerArea h-25">
             footerArea
@@ -24,23 +14,28 @@
 
 <script lang=ts>
 import { Component, Vue } from "vue-property-decorator";
-import SotahButton from "@/components/SotahButton.vue";
 import { component } from 'vue/types/umd';
-import SotahResetButton from "@/components/SotahResetButton.vue";
 import SotahExplainArea from "@/components/organisms/SotahExplainArea.vue";
+import { mapGetters } from 'vuex';
 
 @Component({
     components: {
-        SotahButton,
-        SotahResetButton,
         SotahExplainArea,
     },
+    computed: {
+        ...mapGetters({ model: 'selefIntroduction/getSelfIntroductionModel'})
+    }
 })
 export default class selfIntroduction extends Vue {
     public greatText: string = "Hello";
 
     public onSotahButtonClicked(){
         this.greatText = "こんにちは";
+    }
+
+    hobbyClickedPass3Last(payload: string){
+        // console.log(payload);
+        this.$store.dispatch('selefIntroduction/commitCrickedButton', payload);
     }
 }
 

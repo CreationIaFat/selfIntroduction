@@ -7,7 +7,7 @@
             <SotahStatusArea />
         </div>
         <div class="h-50">
-            <SotahHobbyArea />
+            <SotahHobbyArea @clickedItm2="hobbyClickedPass2"/>
         </div>
     </div>
 </template>
@@ -26,7 +26,10 @@ import SotahHobbyArea from "@/components/molecules/SotahHobbyArea.vue";
     },
 })
 export default class SotahExplainArea extends Vue{
-
+    hobbyClickedPass2(payload: string){
+        // console.log(payload);
+        this.$emit('clickedItm3', payload);
+    }
 }
 
 </script>

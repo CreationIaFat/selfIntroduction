@@ -1,6 +1,6 @@
 <template>
     <td>
-        <button type="button" class="btn btn-outline-danger">{{ dataName }}</button>
+        <button @click="hobbyClicked" type="button" class="btn btn-outline-danger">{{ dataName }}</button>
     </td>
 </template>
 
@@ -11,6 +11,10 @@ import { Component, Vue, Prop } from "vue-property-decorator";
 export default class SotahTableData extends Vue {
     @Prop()
     public dataName?:string;
+
+    hobbyClicked() {
+        this.$emit('clickedItm1', this.dataName);
+    }
 }
 </script>
 
