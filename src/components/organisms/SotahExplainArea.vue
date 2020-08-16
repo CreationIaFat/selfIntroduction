@@ -7,7 +7,7 @@
             <SotahStatusArea />
         </div>
         <div class="h-50">
-            <SotahHobbyArea @clickedItm2="hobbyClickedPass2"/>
+            <SotahHobbyArea @mouseOverItem2="mouseOverHobbyPass2" @clickedItm2="hobbyClickedPass2"/>
         </div>
     </div>
 </template>
@@ -29,6 +29,10 @@ export default class SotahExplainArea extends Vue{
     hobbyClickedPass2(payload: string){
         // console.log(payload);
         this.$emit('clickedItm3', payload);
+    }
+
+    mouseOverHobbyPass2(payload: string){
+        this.$emit('mouseOverItem3', payload);
     }
 }
 
