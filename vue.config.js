@@ -1,6 +1,6 @@
 module.exports = {
   lintOnSave: false,
 
-  publicPath: './',
+  publicPath: './src/App.vue',
   outputDir: 'docs'
 }
