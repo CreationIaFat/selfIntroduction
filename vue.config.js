@@ -1,6 +1,6 @@
 module.exports = {
   lintOnSave: false,
 
-  publicPath: '/src/',
+  publicPath: '/public/index.html',
   outputDir: 'docs'
 }
