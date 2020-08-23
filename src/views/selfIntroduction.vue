@@ -1,9 +1,12 @@
 <template>
     <div class="row pearent">
-        <div class="col-4 h-75 topicArea">
+        <div class="col-4 h-75 topicArea menu-small">
             <SotahTopicArea :imgDataString="imgString" />
         </div>
-        <div class="col-8 h-75 explainArea">
+        <div class="col-8 h-75 explainArea menu-small">
+            <SotahExplainArea @mouseOverItem3="mouseOverHobbyPass3Last" @clickedItm3="hobbyClickedPass3Last" class="h-100"/>
+        </div>
+        <div class="col-12 h-75 explainArea backGroundImage">
             <SotahExplainArea @mouseOverItem3="mouseOverHobbyPass3Last" @clickedItm3="hobbyClickedPass3Last" class="h-100"/>
         </div>
         <div class="col footerArea h-25">
@@ -56,6 +59,7 @@ export default class selfIntroduction extends Vue {
 .pearent {
     height:100%;
 }
+
 .topicArea {
     background-color: aqua;
 }
@@ -65,6 +69,21 @@ export default class selfIntroduction extends Vue {
 .footerArea {
     background-color: rgb(8, 8, 8);
     color: chartreuse;
+}
+@media screen and (max-width: 479px) { /*ウィンドウ幅が最大479pxまでの場合に適用*/
+    .menu-small {
+        display: none;
+    }
+    .backGroundImage {
+        background: linear-gradient(to top, rgba($color: #7018d4, $alpha: 1.0),0%, rgba(164, 211, 230, 0.7) 100%), url(../assets/kishiberohan.png);
+    }
+}
+
+@media screen and (min-width: 767px) { /*ウィンドウ幅が767px以上の場合に適用*/
+    
+        
+
+
 }
 
 </style>
