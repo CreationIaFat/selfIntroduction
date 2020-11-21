@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="h-50">
-            <img alt="Rohan" src="../../assets/kishiberohan.png" height="300px">
+            <img class="menu-small" alt="Rohan" src="../../assets/kishiberohan.png" height="300px">
         </div>
         <div class="h-50">
             Todo:画像出す
@@ -81,3 +81,16 @@ export default class SotahTopicArea extends Vue{
 }
 
 </script>
+
+<style lang="scss">
+@media screen and (max-width: 479px) { /*ウィンドウ幅が最大479pxまでの場合に適用*/
+    .menu-small {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 767px) { /*ウィンドウ幅が767px以上の場合に適用*/
+
+}
+
+</style>

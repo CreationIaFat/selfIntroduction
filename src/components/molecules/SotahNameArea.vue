@@ -28,4 +28,15 @@ h1 {
     padding-bottom: 2%;
     padding-left: 10%;
 }
+
+
+@media screen and (max-width: 479px) { /*ウィンドウ幅が最大479pxまでの場合に適用*/
+    h1 {
+        color: darkmagenta;
+    }
+}
+
+@media screen and (min-width: 767px) { /*ウィンドウ幅が767px以上の場合に適用*/
+
+}
 </style>
